@@ -1,0 +1,6 @@
+module Pods_SupriseMeTest {
+  umbrella header "Pods-SupriseMeTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

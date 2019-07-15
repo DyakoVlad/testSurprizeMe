@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SupriseMeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Min-fW-N5S">
+                                <rect key="frame" x="187.5" y="820" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.8980392157" green="0.38823529410000002" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgu-WW-nAU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Min-fW-N5S" secondAttribute="bottom" constant="5" id="7Ea-lZ-mOB"/>
+                            <constraint firstItem="Min-fW-N5S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F2s-FJ-L8Y"/>
+                            <constraint firstItem="hgu-WW-nAU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TYI-dH-e1H"/>
+                            <constraint firstItem="hgu-WW-nAU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ie3-y7-Jph"/>
+                            <constraint firstItem="hgu-WW-nAU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rpT-SH-3QQ"/>
+                            <constraint firstAttribute="bottom" secondItem="hgu-WW-nAU" secondAttribute="bottom" id="stZ-NC-lWz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="Min-fW-N5S" id="kq1-l0-5mg"/>
+                        <outlet property="scrollView" destination="hgu-WW-nAU" id="g1r-GL-8Hc"/>
+                        <segue destination="9Xq-6S-0G0" kind="show" identifier="toMenu" id="04y-bI-JsK"/>
+                        <segue destination="2t0-sY-5xl" kind="show" identifier="tourCode" id="U9z-Lv-xfq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x7N-74-Rsu">
+            <objects>
+                <viewController id="2t0-sY-5xl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4tk-jE-DbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boY-Ac-DvT">
+                                <rect key="frame" x="113.5" y="425" width="187" height="46"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="boY-Ac-DvT" firstAttribute="centerY" secondItem="4tk-jE-DbJ" secondAttribute="centerY" id="PaU-bU-98D"/>
+                            <constraint firstItem="boY-Ac-DvT" firstAttribute="centerX" secondItem="4tk-jE-DbJ" secondAttribute="centerX" id="eSh-ZD-b8W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UQf-En-jUV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ikg-Ss-ifU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="-364"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a7n-N6-Kge">
+            <objects>
+                <viewController id="9Xq-6S-0G0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nLB-KI-W5b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdZ-0p-Was">
+                                <rect key="frame" x="107" y="425" width="200" height="46"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UdZ-0p-Was" firstAttribute="centerY" secondItem="nLB-KI-W5b" secondAttribute="centerY" id="b1G-x1-tWY"/>
+                            <constraint firstItem="UdZ-0p-Was" firstAttribute="centerX" secondItem="nLB-KI-W5b" secondAttribute="centerX" id="fwZ-8c-zD4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ha9-dd-FXn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waw-QH-xfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="546"/>
+        </scene>
+    </scenes>
+</document>
