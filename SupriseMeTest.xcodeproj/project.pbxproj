@@ -19,6 +19,9 @@
 		1713F20F22DA10CC00DFF7DD /* customFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713F20D22DA10CC00DFF7DD /* customFont.swift */; };
 		1713F21022DA10CC00DFF7DD /* customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713F20E22DA10CC00DFF7DD /* customColors.swift */; };
 		1713F23122DA5EF500DFF7DD /* FormFieldPresetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713F23022DA5EF500DFF7DD /* FormFieldPresetFactory.swift */; };
+		173938C822DD2B8E00737F51 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173938C722DD2B8E00737F51 /* MainMenuViewController.swift */; };
+		173938CA22DD2BAE00737F51 /* TourCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173938C922DD2BAE00737F51 /* TourCodeViewController.swift */; };
+		173938CC22DDD48900737F51 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173938CB22DDD48800737F51 /* KeychainService.swift */; };
 		17B44DCC22DC9D4100327532 /* loginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B44DCB22DC9D4100327532 /* loginView.xib */; };
 		17B44DCE22DC9D6D00327532 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B44DCD22DC9D6D00327532 /* loginView.swift */; };
 		17FCC7B222DB72CA006814C8 /* UIScreen+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FCC7AC22DB72CA006814C8 /* UIScreen+Utils.swift */; };
@@ -46,6 +49,9 @@
 		1713F20D22DA10CC00DFF7DD /* customFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customFont.swift; sourceTree = "<group>"; };
 		1713F20E22DA10CC00DFF7DD /* customColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customColors.swift; sourceTree = "<group>"; };
 		1713F23022DA5EF500DFF7DD /* FormFieldPresetFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldPresetFactory.swift; sourceTree = "<group>"; };
+		173938C722DD2B8E00737F51 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		173938C922DD2BAE00737F51 /* TourCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCodeViewController.swift; sourceTree = "<group>"; };
+		173938CB22DDD48800737F51 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		17B44DCB22DC9D4100327532 /* loginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loginView.xib; sourceTree = "<group>"; };
 		17B44DCD22DC9D6D00327532 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		17FCC7AC22DB72CA006814C8 /* UIScreen+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Utils.swift"; sourceTree = "<group>"; };
@@ -102,6 +108,8 @@
 				1713F1F522D8A90400DFF7DD /* Assets.xcassets */,
 				1713F1F722D8A90400DFF7DD /* LaunchScreen.storyboard */,
 				1713F1FA22D8A90400DFF7DD /* Info.plist */,
+				173938C722DD2B8E00737F51 /* MainMenuViewController.swift */,
+				173938C922DD2BAE00737F51 /* TourCodeViewController.swift */,
 			);
 			path = SupriseMeTest;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			children = (
 				1713F20622D8B57000DFF7DD /* ActionButton.swift */,
 				1713F20B22D95C1500DFF7DD /* HelpButton.swift */,
+				173938CB22DDD48800737F51 /* KeychainService.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -266,14 +275,17 @@
 			files = (
 				1713F1F122D8A8FE00DFF7DD /* ViewController.swift in Sources */,
 				1713F20F22DA10CC00DFF7DD /* customFont.swift in Sources */,
+				173938CC22DDD48900737F51 /* KeychainService.swift in Sources */,
 				17B44DCE22DC9D6D00327532 /* loginView.swift in Sources */,
 				17FCC7B322DB72CA006814C8 /* Object+ClassName.swift in Sources */,
 				1713F23122DA5EF500DFF7DD /* FormFieldPresetFactory.swift in Sources */,
 				1713F20C22D95C1500DFF7DD /* HelpButton.swift in Sources */,
+				173938C822DD2B8E00737F51 /* MainMenuViewController.swift in Sources */,
 				17FCC7B622DB72CA006814C8 /* UIView+Nib.swift in Sources */,
 				17FCC7B222DB72CA006814C8 /* UIScreen+Utils.swift in Sources */,
 				17FCC7B422DB72CA006814C8 /* CGRect+Utils.swift in Sources */,
 				1713F1EF22D8A8FE00DFF7DD /* AppDelegate.swift in Sources */,
+				173938CA22DD2BAE00737F51 /* TourCodeViewController.swift in Sources */,
 				1713F20222D8A95E00DFF7DD /* Intro.swift in Sources */,
 				1713F20722D8B57000DFF7DD /* ActionButton.swift in Sources */,
 				1713F21022DA10CC00DFF7DD /* customColors.swift in Sources */,

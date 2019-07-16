@@ -38,7 +38,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="41h-SV-ie6">
                             <rect key="frame" x="20" y="303" width="374" height="50"/>
@@ -47,7 +47,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgY-9f-ec0" customClass="ActionButton" customModule="SupriseMeTest" customModuleProvider="target">
                             <rect key="frame" x="20" y="383" width="374" height="60"/>
@@ -85,8 +85,8 @@
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFM-Rh-6rF">
-                            <rect key="frame" x="90" y="591" width="234" height="50"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFM-Rh-6rF">
+                            <rect key="frame" x="90" y="593" width="234" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="R7N-4l-iXH"/>
                             </constraints>

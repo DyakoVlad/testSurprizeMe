@@ -11,6 +11,7 @@ import UserNotifications
 import SwiftEntryKit
 import Alamofire
 import ActiveLabel
+import SwiftyJSON
 
 class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
@@ -21,6 +22,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
     }
     
     let url = "https://app.surprizeme.ru/api/login_magic/"
+    let service = "myService"
+    let account = "myAccount"
     
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -188,9 +191,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
     }
     
     @objc func agreePressed() {
-        var attributes = EKAttributes()
+        var attributes = EKAttributes.bottomFloat
         attributes.hapticFeedbackType = .success
-        attributes = .bottomFloat
         attributes.displayDuration = .infinity
         attributes.screenBackground = .color(color: UIColor(white: 0.2, alpha: 0.5))
         attributes.entryBackground = .color(color: .white)
@@ -222,18 +224,31 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
     @objc func authButtonPressed() {
         var email = ""
         var password = ""
+        var errors: [String] = []
         for view in loginViewModal.subviews[0].subviews[0].subviews {
             if view is UITextField {
                 if (view as! UITextField).textContentType == .emailAddress {
                     email = (view as! UITextField).text!
+                    if email.isEmpty {
+                        errors.append("Email is required")
+                        (view as! UITextField).shake(with: "Email is required")
+                    } else if !isValidEmail(emailStr: email) {
+                        (view as! UITextField).shake(with: "Email is invalid")
+                        errors.append("Email is invalid")
+                    }
                 } else if (view as! UITextField).textContentType == .password {
                     password = (view as! UITextField).text!
+                    if password.isEmpty {
+                        errors.append("Password is required")
+                        (view as! UITextField).shake(with: "Password is required")
+                    }
                 }
             }
         }
-        print(email + " " + password)
-        sendCredentials(email: email, password: password)
-        SwiftEntryKit.dismiss()
+        if errors.isEmpty {
+            SwiftEntryKit.dismiss()
+            sendCredentials(email: email, password: password)
+        }
     }
     
     @objc func closeModals() {
@@ -278,16 +293,42 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
     }
     
     private func sendCredentials(email: String, password: String) {
-        Alamofire.request(URL(string: url + password)!, method: .post, parameters: ["username": email]).responseString {
+        Alamofire.request(URL(string: url + password)!, method: .post, parameters: ["username": email], encoding: JSONEncoding.default).responseJSON {
             response in
-            print(response)
+            if response.result.isSuccess {
+                let token: JSON = JSON(response.result.value!)
+                guard let _ = token["type"].string else
+                {
+                    let alert = UIAlertController(title: "Error", message: "Wrong email or password", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Fix", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                KeychainService.savePassword(service: self.service, account: self.account, data: password)
+                self.skip()
+            }
+            else {
+                let alert = UIAlertController(title: "Error", message: response.result.error as? String, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Fix", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if textField.textContentType == .password {
+            authButtonPressed()
+        }
         return true
     }
     
+    func isValidEmail(emailStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: emailStr)
+    }
+    
 }
-

@@ -9,5 +9,6 @@ target 'SupriseMeTest' do
     pod 'SwiftEntryKit'
     pod 'Alamofire'
     pod 'ActiveLabel'
+    pod 'SwiftyJSON'
 
 end
